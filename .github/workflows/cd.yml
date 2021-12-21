@@ -1,0 +1,33 @@
+name: Build, test, and deploy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+
+    - name: dotnet restore
+      run: dotnet restore
+
+    - name: dotnet build
+      run: dotnet build -c Release --no-restore
+
+    - name: dotnet test
+      run: dotnet test -c Release --no-build --verbosity normal
+    - name: Pack
+      run: dotnet pack JWTDecoder/JWTDecoder.csproj-c Release --no-restore --no-build --include-symbols -p:SymbolPackageFormat=snupkg -o .
+
+    - name: Push to nuget.org
+      run: dotnet nuget push *.nupkg --skip-duplicate -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}}      

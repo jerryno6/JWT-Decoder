@@ -3,15 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackOnBuild>true</PackOnBuild>
-    <PackageVersion>0.10.2</PackageVersion>
+    <Version>0.10.1</Version>
     <Authors>VuLe</Authors>
     <Description>This is a fork version from Dale Myszewski. Sometimes you just need to decode the payload of a JWT Token in a C# client. This library aims to do just that.</Description>
-    <ReleaseVersion>0.10.0</ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
     <PackageId>JWTDecoder-NetStandard2</PackageId>
-    <PackageVersion>0.10.0</PackageVersion>
     <PackageProjectUrl>https://github.com/jerryno6/JWT-Decoder</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/jerryno6/JWT-Decoder</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
