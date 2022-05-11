@@ -1,4 +1,4 @@
-# JWT-Decoder
+# JWT-Decoder for .net standard 2.0
 
 A simple easy to use C# [JWT](https://tools.ietf.org/html/rfc7519) Decoder. Sometimes in a client you just need the token contents. This is meant to get you just that and to validate the token (if you really want to).
 
